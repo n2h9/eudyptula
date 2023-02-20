@@ -1,6 +1,6 @@
 KDIR 		   := /lib/modules/$(shell uname -r)/build
 PWD            := $(shell pwd)
-obj-m          := eudyptula_task01_lkm.o
+obj-m          := eudyptula_lkm.o
 EXTRA_CFLAGS   += -DDEBUG
 
 all:

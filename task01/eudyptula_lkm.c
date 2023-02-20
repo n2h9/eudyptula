@@ -4,7 +4,7 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 
-#define MODNAME   "eudyptula_task01"
+#define MODNAME   "eudyptula"
 MODULE_LICENSE("Dual MIT/GPL");
 MODULE_AUTHOR("n2h9");
 MODULE_DESCRIPTION("task01");
