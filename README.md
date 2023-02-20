@@ -26,7 +26,7 @@ responding to this task, so that I can figure out who to attribute it
 to.  You can just respond to the task with the answers and all should be
 fine.
 
-If you forgot, your id is "7c1caf2f50d1".  But of course you have not
+If you forgot, your id is "n2h9".  But of course you have not
 forgotten that yet, you are better than that.
 
 This is Task 02 of the Eudyptula Challenge
@@ -68,7 +68,7 @@ Remember to use your ID assigned to you in the Subject: line when
 responding to this task, so that I can figure out who to attribute it
 to.
 
-If you forgot, your id is "7c1caf2f50d1".  But why do I repeat myself?
+If you forgot, your id is "n2h9".  But why do I repeat myself?
 Of course you know your id, you made it through the first task just fine
 with it.
 
@@ -95,7 +95,7 @@ Remember to use your ID assigned to you in the Subject: line when
 responding to this task, so that I can figure out who to attribute it
 to.
 
-If you forgot, your id is "7c1caf2f50d1".  Surely I don't need to keep
+If you forgot, your id is "n2h9".  Surely I don't need to keep
 saying this right?  I know, _you_ wouldn't forget, but someone else, of
 course they would, so I'll just leave it here for those "others".
 
@@ -144,7 +144,7 @@ coding style, do not remove lines of code.
 As always, please remember to use your ID assigned to you in the
 Subject: line when responding to this task, so that I can figure out who
 to attribute it to.  And if you forgot (which of course you have not,
-we've been through all of this before), your id is "7c1caf2f50d1".
+we've been through all of this before), your id is "n2h9".
 
 This is Task 05 of the Eudyptula Challenge
 ------------------------------------------
@@ -164,7 +164,7 @@ Yes, so simple, and yet, it's a bit tricky.  As a hint, go read chapter
 free, and online, no need to go buy anything.
 
 As always, please remember to use your ID assigned to you, yadda yadda
-yadda...  It's "7c1caf2f50d1" of course.
+yadda...  It's "n2h9" of course.
 
 This is Task 06 of the Eudyptula Challenge
 ------------------------------------------
@@ -197,7 +197,7 @@ The task this time is this:
   - Provide some "proof" this all works properly.
 
 As you will be putting your id into the kernel module, of course you
-haven't forgotten it, but just to be safe, it's "7c1caf2f50d1".
+haven't forgotten it, but just to be safe, it's "n2h9".
 
 This is Task 07 of the Eudyptula Challenge
 ------------------------------------------
@@ -361,7 +361,7 @@ working properly on your machine.
 
 And as always, please use your id in the subject line.  If you happened
 to forget it, as it has been a while since I reminded you of it, it is
-"7c1caf2f50d1".
+"n2h9".
 
 This is Task 12 of the Eudyptula Challenge
 ------------------------------------------
@@ -433,7 +433,7 @@ task 04, that does the following:
 
 As always, please send the full module (following the proper kernel
 coding style rules), and "proof" of it working properly.  And remember
-to use your id of "7c1caf2f50d1" in the Subject line properly.
+to use your id of "n2h9" in the Subject line properly.
 
 This is Task 13 of the Eudyptula Challenge
 ------------------------------------------
@@ -491,7 +491,7 @@ figure out how to apply it.
 
 Also provide some kind of proof that you tested the patch.
 
-And, in case you happened to forget it, your id is "7c1caf2f50d1".
+And, in case you happened to forget it, your id is "n2h9".
 
 This is Task 15 of the Eudyptula Challenge
 ------------------------------------------
@@ -520,7 +520,7 @@ For this task:
     64bit value (low_id being the lower 32bits of the id, high_id being
     the upper 32bits of the id).
   - If the id value matches your id (which of course you know as
-    "7c1caf2f50d1", then the syscall returns success.  Otherwise it
+    "n2h9", then the syscall returns success.  Otherwise it
     returns a return code signifying an invalid value was passed to it.
   - Write a userspace C program that calls the syscall and properly
     exercises it (valid and invalid calls need to be made).
