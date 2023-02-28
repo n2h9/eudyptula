@@ -25,31 +25,55 @@ static struct device_ctx ctx = {
 static int misc_open(struct inode *inode, struct file *f)
 {
 
-	dev_info(ctx.dev, "open method called \n");
+	dev_dbg(ctx.dev, "open method called \n");
 	return nonseekable_open(inode, f);
 }
 
 static ssize_t misc_read(struct file *f, char __user *ubuf, size_t count, loff_t *offset)
 {
-	dev_info(ctx.dev, "read method called \n");
-	if(copy_to_user(ubuf, ctx.id, sizeof(ctx.id))) {
+	size_t strsize = strlen(ctx.id);
+	dev_dbg(ctx.dev, "read method called \n");
+	if(copy_to_user(ubuf, ctx.id, strsize)) {
 		dev_warn(ctx.dev, "copy_to_user failed");
 		return -EFAULT;
 	}
 
-	return sizeof(ctx.id);
+	return strsize;
 }
 
-static ssize_t misc_write(struct file *f, const char __user *ubuff, size_t count, loff_t *offset)
+static ssize_t misc_write(struct file *f, const char __user *ubuf, size_t count, loff_t *offset)
 {
-	// @TODO
-	dev_info(ctx.dev, "write method called @TODO HERE \n");
-	return 0;
+	char *kbuf; 
+	unsigned long uncopied_num;
+	
+	dev_dbg(ctx.dev, "write method called\n");
+
+	kbuf = (char *)kvmalloc(count, 0);
+	dev_dbg(ctx.dev, "kbuf allocated\n");
+	
+	uncopied_num = copy_from_user(kbuf, ubuf, count);
+	dev_dbg(ctx.dev, "copy_from_user called\n");
+	if (uncopied_num > 0) {
+		dev_dbg(ctx.dev, "copy_from_user returned not 0\n");
+		goto err0;
+	}
+	
+	if (strcmp(ctx.id, kbuf) != 0) {
+		dev_dbg(ctx.dev, "write string not equal to id\n");
+		goto err0;
+	}
+
+	kvfree(kbuf);
+	return strlen(ctx.id);
+
+	err0:
+		kvfree(kbuf);
+		return -EINVAL;
 }
 
 static int misc_release(struct inode *inode, struct file *f)
 {
-	dev_info(ctx.dev, "release method called \n");
+	dev_dbg(ctx.dev, "release method called \n");
 	return 0;
 }
 
@@ -80,9 +104,9 @@ static int __init module_init_func(void)
 
 	ctx.dev = n2h9_miscdev.this_device;
 	
-	dev_info(
+	dev_dbg(
 		ctx.dev, 
-		"misc device driver registered minor number = %d", 
+		"misc device driver registered, minor number = %d", 
 		n2h9_miscdev.minor
 	);
 
@@ -93,7 +117,7 @@ static void __exit module_exit_func(void)
 {
 	ctx.dev = NULL;
 	misc_deregister(&n2h9_miscdev);
-	pr_info("misc device deregistered\n");
+	pr_debug("misc device deregistered\n");
 }
 
 
